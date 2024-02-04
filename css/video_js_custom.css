@@ -1,0 +1,22 @@
+
+.video-js .vjs-big-play-button {
+    background-color: #fd5631;
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    margin-left: -32px;
+    margin-top: -32px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.video-js .vjs-big-play-button .vjs-icon-placeholder {
+    /* position: static; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-js .vjs-big-play-button .vjs-icon-placeholder::before {
+    position: static;
+}

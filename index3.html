@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Finder | Car Finder | Car Single Page</title>
+        <!-- SEO Meta Tags-->
+        <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template" />
+        <meta name="keywords" content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch" />
+        <meta name="author" content="Createx Studio" />
+        <!-- Viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Favicon and Touch Icons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg" />
+        <meta name="msapplication-TileColor" content="#766df4" />
+        <meta name="theme-color" content="#ffffff" />
+        <!-- Vendor Styles-->
+        <link href="https://vjs.zencdn.net/8.9.0/video-js.css" rel="stylesheet" />
+        <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css" />
+        <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css" />
+        <link rel="stylesheet" media="screen" href="vendor/lightgallery/css/lightgallery-bundle.min.css" />
+        <!-- Main Theme Styles + Bootstrap-->
+        <link rel="stylesheet" media="screen" href="css/theme.min.css" />
+        <link rel="stylesheet" media="screen" href="css/video_js_custom.css" />
+        <style>
+            .videoblock__wrapper {
+                position: sticky;
+                top: 100px;
+            }
+            .videoblock {
+                position: relative;
+                width: 100%;
+                padding-bottom: 70%;
+            }
+            .videoblock video {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .videoblock .video-js {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .posterblock {
+                width: 100%;
+                padding-bottom: 75%;
+                position: relative;
+            }
+            .posterblock:hover .posterblock__overlay {
+                opacity: 0.5;
+            }
+            .posterblock img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .posterblock__overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s;
+                opacity: 0;
+                background-color: #000;
+            }
+            .posterblock button {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <!-- Body-->
+    <body class="bg-dark">
+        <main class="page-wrapper">
+            <header class="navbar navbar-expand-lg navbar-dark fixed-top" data-scroll-header>
+                <div class="container">
+                    <a class="navbar-brand me-3 me-xl-4" href="car-finder-home.html">
+                        <img class="d-block" src="logo.svg" width="116" alt="Finder" />
+                    </a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="car-finder-sell-car.html"> <i class="fi-user me-2"></i>Войти </a>
+                    <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+                        <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem">
+                            <!-- Demos switcher-->
+                            <li class="nav-item dropdown me-lg-2">
+                                <a class="nav-link dropdown-toggle align-items-center pe-lg-4" href="car-finder-single.html#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                    <i class="fi-globe me-2"></i>
+                                    Русский
+                                    <span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end border-light" style="width: 1px; height: 30px"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li>
+                                        <a class="dropdown-item" href="car-finder-home.html"> Татарский </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Menu items-->
+                            <li class="nav-item"><a class="nav-link" href="car-finder-home.html">Главная</a></li>
+                            <li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle" href="car-finder-single.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Фильмы</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="car-finder-catalog-list.html">Исторические</a></li>
+                                    <li><a class="dropdown-item" href="car-finder-catalog-grid.html">Комедии</a></li>
+                                    <li><a class="dropdown-item" href="car-finder-single.html">Боевики</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="car-finder-home.html">О компании</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container mt-5 mb-md-4">
+                <!-- ========================================================== -->
+                <!-- ======================= breadcrumb======================== -->
+                <!-- ========================================================== -->
+                <nav class="mb-3 pt-md-3" aria-label="Breadcrumb">
+                    <ol class="breadcrumb breadcrumb-light">
+                        <li class="breadcrumb-item"><a href="car-finder-home.html">Фильмы</a></li>
+                        <li class="breadcrumb-item"><a href="car-finder-catalog-grid.html">Исторические</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">ЯУ</li>
+                    </ol>
+                </nav>
+                <!-- ========================================================== -->
+                <!-- =================== END breadcrumb======================== -->
+                <!-- ========================================================== -->
+                <h1 class="h1 text-light">ЯУ (2024)</h1>
+
+                <!-- ========================================================== -->
+                <!-- ======================= main_content ===================== -->
+                <!-- ========================================================== -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="videoblock__wrapper">
+                            <div class="rounded overflow-hidden videoblock">
+                                <video id="my-video" class="video-js vjs-theme-city w-100" controls preload="auto" width="640" height="445" poster="img/poster.jpg" data-setup="{}">
+                                    <source src="oceans.mp4" type="video/mp4" />
+                                    <!-- <source src="ocean.webm" type="video/webm" /> -->
+                                    <p class="vjs-no-js">
+                                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                    </p>
+                                </video>
+                            </div>
+                        </div>
+                        <!-- <div class="rounded overflow-hidden posterblock">
+                            <img src="poster-horisontal.jpg" alt="">
+                            <div class="posterblock__overlay"></div>
+                            <button class="btn btn-primary btn-lg" href="car-finder-single.html#send-mail" data-bs-toggle="collapse">
+                                <i class="fi-play me-2"></i>
+                                Смотреть за 299 руб
+                            </button>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mt-3">
+                            <h2 class="h4 text-light mb-4">О фильме</h2>
+                            <div class="row text-light">
+                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <strong>Жанр:</strong>
+                                            <span class="opacity-70 ms-1">Комедия</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Режиссёр:</strong>
+                                            <span class="opacity-70 ms-1">Айдар Габдрахманов</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Продюсер:</strong>
+                                            <span class="opacity-70 ms-1">Рәис Шайхетдинов</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <strong>Хронометраж:</strong>
+                                            <span class="opacity-70 ms-1">70 минут</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Сценарий:</strong>
+                                            <span class="opacity-70 ms-1">Альберт Шакиров</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Оператор:</strong>
+                                            <span class="opacity-70 ms-1">Вадим Крючков</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-light card-body mb-3 fixed-bottom-md d-md-block mt-3">
+                            <div class="d-flex">
+                                <button class="btn btn-outline-light btn-lg px-4 w-100" type="button">
+                                    <i class="fi-play me-2"></i>
+                                    Трейлер
+                                </button>
+                                <!-- <button class="btn btn-outline-light btn-lg px-4 ms-3" type="button">
+                                    <i class="fi-heart"></i>
+                                </button> -->
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-icon btn-outline-light rounded-circle ms-3" type="button" data-bs-toggle="dropdown">
+                                        <i class="fi-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="dropdown d-flex align-items-center ms-3" data-bs-toggle="tooltip" data-bs-original-title="Поделиться">
+                                    <button class="btn btn-icon btn-outline-light rounded-circle" type="button" data-bs-toggle="dropdown"><i class="fi-share"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end my-1">
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fi-vk fs-base opacity-75 me-2"></i>
+                                            Вконтакте
+                                        </button>
+                                        <button class="dropdown-item" type="button">
+                                            <i class="fi-odnoklassniki fs-base opacity-75 me-2"></i>
+                                            Одноклассники
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- <button class="btn btn-outline-light btn-lg px-4 ms-3" type="button">
+                                    <i class="fi-share"></i>
+                                </button> -->
+                            </div>
+                        </div>
+                        <!-- ===================================================== -->
+                        <!-- ================= Төп рольләрдә ===================== -->
+                        <!-- ===================================================== -->
+                        <div>
+                            <h2 class="h4 text-light pt-3 mb-4">Төп рольләрдә</h2>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Гамил
+                                                <br />
+                                                Әсхәдулла
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Искәндәр
+                                                <br />
+                                                Мотыйгулла
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Рөстәм
+                                                <br />
+                                                Рахманкул
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Рөстәм
+                                                <br />
+                                                Хәсәнов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Әнфис
+                                                <br />
+                                                Кәлимуллин
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ===================================================== -->
+                        <!-- ============= END Төп рольләрдә ===================== -->
+                        <!-- ===================================================== -->
+
+                        <!-- ===================================================== -->
+                        <!-- ===================== Рольләрдә ===================== -->
+                        <!-- ===================================================== -->
+                        <div>
+                            <h2 class="h4 text-light pt-5 mb-4">Рольләрдә</h2>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Салават
+                                                <br />
+                                                Фәтхетдинов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Салават
+                                                <br />
+                                                Миннеханов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Азат
+                                                <br />
+                                                Зарипов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Марат
+                                                <br />
+                                                Хәбибуллин
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Азат
+                                                <br />
+                                                Гыйлметдинов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Илнур
+                                                <br />
+                                                Байназаров
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Салават
+                                                <br />
+                                                Хәбибуллин
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Фаяз
+                                                <br />
+                                                Хөсәенов
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+                                    <a href="" class="text-decoration-none">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-circle" src="img/avatars/33.jpg" width="70" alt="Devon Lane" />
+                                            <p class="mb-0 text-light mt-3">
+                                                Нияз
+                                                <br />
+                                                Заһидуллин
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ===================================================== -->
+                        <!-- ================= END Рольләрдә ===================== -->
+                        <!-- ===================================================== -->
+
+                        <!-- ===================================================== -->
+                        <!-- ======================= Логлайн ===================== -->
+                        <!-- ===================================================== -->
+                        <div class="pb-4 mb-3">
+                            <h2 class="h4 text-light pt-4 mt-3">Логлайн</h2>
+                            <p class="text-light opacity-70 mb-1">Үз комсызлыгы аркасында бар мөлкәтен тараткан Әстерхан ханы Мотыйкның бай Казан тәхетенә дәгъва кылуында соңгы өмете булып ике тинтәк сугышчысы – Азамат һәм Батыр гына кала.</p>
+                            <div class="collapse" id="seeMoreDescription">
+                                <p class="text-light opacity-70 mb-1">Тик аларга ышанып тапшырга</p>
+                            </div>
+                            <a class="collapse-label collapsed" href="car-finder-single.html#seeMoreDescription" data-bs-toggle="collapse" data-bs-label-collapsed="Показать" data-bs-label-expanded="Скрыть" role="button" aria-expanded="false" aria-controls="seeMoreDescription"></a>
+                        </div>
+                        <!-- ===================================================== -->
+                        <!-- ================= END Логлайн ===================== -->
+                        <!-- ===================================================== -->
+                    </div>
+                </div>
+                <h2 class="h3 text-light pb-3 mt-md-4">Похожие фильмы</h2>
+                <div class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside tns-carousel-light">
+                    <div class="tns-carousel-inner" data-carousel-options='{"items": 5, "responsive": {"0":{"items":1, "gutter": 16},"500":{"items":2, "gutter": 18},"900":{"items":5, "gutter": 20}, "1100":{"gutter": 24}}}'>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article>
+                                <a href="#" class="d-block rounded-3 overflow-hidden">
+                                    <img class="d-block" src="poster.jpeg" alt="Image">
+                                </a>
+                                <div class="">
+                                    <a href="#" class="fs-xs text-uppercase text-decoration-none">2024</a>
+                                    <h3 class="fs-base pt-1 mb-0">
+                                        <a class="nav-link text-light" href="#">Термиратор</a>
+                                    </h3>
+                                    <p class="pt-0 mb-0">Боевик</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <!-- ========================================================== -->
+                <!-- ==================== END main_content ===================== -->
+                <!-- ========================================================== -->
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="footer bg-faded-light">
+            <div class="border-bottom border-light py-4">
+                <div class="container d-sm-flex align-items-center justify-content-between">
+                    <a class="d-inline-block" href="real-estate-home-v1.html"><img src="logo.svg" width="116" alt="logo" /></a>
+                    <div class="d-flex pt-3 pt-sm-0">
+                        <div class="dropdown ms-n3">
+                            <button class="btn btn-light btn-link btn-sm dropdown-toggle fw-normal py-2" type="button" data-bs-toggle="dropdown"><i class="fi-globe me-2"></i>Русский</button>
+                            <div class="dropdown-menu dropdown-menu-dark w-100">
+                                <a class="dropdown-item" href="car-finder-single.html#">Татарский</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-4 pb-3 pt-lg-5 pb-lg-4">
+                <div class="row pt-2 pt-lg-0">
+                    <div class="col-lg-3 pb-2 mb-4">
+                        <h3 class="h5 text-light mb-2">Подписывайтесь на нашу новостную рассылку</h3>
+                        <p class="fs-sm text-light opacity-70">Следите за нашими новинками!</p>
+                        <form class="form-group form-group-light w-100">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text"> <i class="fi-mail"></i></span>
+                                <input class="form-control" type="text" placeholder="Ваш E-mail" />
+                            </div>
+                            <button class="btn btn-primary btn-icon btn-sm" type="button"><i class="fi-send"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 offset-xl-1 mb-2 mb-sm-4">
+                        <h3 class="fs-base text-light">Фильмы</h3>
+                        <ul class="list-unstyled fs-sm">
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Исторические</a></li>
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Комедии</a></li>
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Боевики</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
+                        <h3 class="fs-base text-light">О компании</h3>
+                        <ul class="list-unstyled fs-sm">
+                            <li><a class="nav-link-light" href="car-finder-single.html#">О компании</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 mb-2 mb-sm-4">
+                        <h3 class="fs-base text-light">Профиль</h3>
+                        <ul class="list-unstyled fs-sm">
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Мой профиль</a></li>
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Избранное</a></li>
+                            <li><a class="nav-link-light" href="car-finder-single.html#">Покупки</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-6 col-md-3 mb-2 mb-sm-4">
+                        <a class="d-flex align-items-center text-decoration-none mb-2" href="tel:4065550120"><i class="fi-device-mobile me-2"></i><span class="text-light">8 (951) 451-8479</span></a
+                        ><a class="d-flex align-items-center text-decoration-none mb-2" href="mailto:example@email.com"><i class="fi-mail me-2"></i><span class="text-light">info@mahm.com</span></a>
+                        <div class="d-flex flex-wrap pt-4">
+                            <a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="car-finder-single.html#">
+                                <i class="fi-vk"></i>
+                            </a>
+                            <a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="car-finder-single.html#">
+                                <i class="fi-odnoklassniki"></i>
+                            </a>
+                            <a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2 me-2" href="car-finder-single.html#">
+                                <i class="fi-telegram"></i>
+                            </a>
+                            <a class="btn btn-icon btn-translucent-light btn-xs rounded-circle mb-2" href="car-finder-single.html#">
+                                <i class="fi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-lg-flex align-items-center justify-content-between fs-sm pb-3">
+                <div class="d-flex flex-wrap justify-content-center order-lg-2 mb-3">
+                    <a class="nav-link nav-link-light fw-normal" href="car-finder-single.html#">Политика конфиденциальности</a>
+                </div>
+                <p class="text-center text-lg-start order-lg-1 mb-lg-0"><span class="text-light opacity-50">&copy; Все права защищены. Сделано в </span><a class="nav-link-light fw-bold" href="https://createx.studio/" target="_blank" rel="noopener">Студии Хасенова</a></p>
+            </div>
+        </footer>
+        <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up"> </i></a>
+        <!-- Vendor scrits: js libraries and plugins-->
+        <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+        <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+        <script src="vendor/lightgallery/lightgallery.min.js"></script>
+        <script src="vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+        <script src="https://vjs.zencdn.net/8.9.0/video.min.js"></script>
+        <!-- Main theme script-->
+        <script src="js/theme.min.js"></script>
+    </body>
+</html>
